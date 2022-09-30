@@ -1,0 +1,39 @@
+body{
+    font-family: 'Gilroy','NotoSansKR';
+    font-size: 13px;
+    font-weight: 400;
+    color: #333;
+    letter-spacing: -0.05em;
+}
+body.hidden{
+    overflow: hidden;
+}
+.blind{
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+}
+.common-inner{
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+
+.header .menu-wrap .link-menu,
+.link-search,
+.link-cart,
+.link-mypage,
+header.active .logo-area .link-menu,
+header.active .logo-area .link-search,
+header.active .logo-area .link-cart,
+header.active .logo-area .link-mypage,
+
+
+.more-box .ic-R-arrow{
+    background: url(../image/icon/sp_common_layout.png) no-repeat;
+    background-size: 100px auto;
+}
