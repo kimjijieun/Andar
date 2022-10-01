@@ -53,14 +53,14 @@ $(function () {
 
   $(window).scroll(function(){
     if ($(this).scrollTop()>0) {
-        $('.header, .gnb-area, .top-menu').addClass('active');
+        $('.header, .top-menu').addClass('active');
         $('.menu-wrap').fadeIn(0);
+        // $('.bottom-menu').css('display', 'none');
     } else {
-        $('.header, .gnb-area, .top-menu').removeClass('active');
-        
+        $('.header, .top-menu').removeClass('active');
     }
-
   })
+  $(window).trigger('scroll');
 
   // //////////top-menu펼치기/////////////
   $('.hidden-menu .ic-show').click(function(e){
@@ -78,7 +78,9 @@ $(function () {
       $('.top-menu-list').removeClass("active");
     }
 
-
+    // if($(window).scrollTop() == 0) {
+    //   $('.bottom-menu').css('display', 'none');
+    // }
 
     // $(this).toggleClass("active");
    
@@ -91,6 +93,7 @@ $(function () {
 //사이드 메뉴
   $('.link-menu').click(function(e){
     e.preventDefault();
+    e.stopPropagation();
     $('.sc-menu, .dimmed').addClass('active');
     $('body').addClass('hidden');
   })//END
@@ -105,7 +108,7 @@ $(function () {
 // 사이드메뉴 오픈
 $('.sc-menu .category-item').click(function(e){
   e.preventDefault();
-  // $(this).children('ul').length == 0
+  // $(this).children('ul').length == 0 ->있냐고 물어보는거임
  
   // if ($(this).children('ul').css('display') == 'none') {
   //     $(this).children('ul').stop().slideDown();
@@ -137,6 +140,7 @@ $('.sc-menu .category-item').click(function(e){
       $('.appear-tab').fadeIn();
     }
   });
+  
 
 
 

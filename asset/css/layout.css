@@ -185,6 +185,13 @@
 
 }
 .hidden-menu .all-menu.active{display: block;}
+
+/* .hidden-menu .ic-show.active .all-menu{display: block;} */
+
+
+
+
+
 .circle::after{
     position: relative;
     top: -8px;
@@ -264,7 +271,7 @@
 
 
 /* sc-menu 사이드 판 */
-.here{
+/* .here{
     position: fixed;
     top: 0;
     left: 0;
@@ -282,8 +289,7 @@
     left: 0;
     width: 100%;
     background: #fff;
-    /* transition: 0.3s; */
-}
+} */
 .logo-area .bold{
     font-weight: 700;
 }

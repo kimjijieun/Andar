@@ -21,7 +21,7 @@ body.hidden{
     padding: 0 15px;
 }
 
-
+.dp-no{display: none;}
 
 .header .menu-wrap .link-menu,
 .link-search,
