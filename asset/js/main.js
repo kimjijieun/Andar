@@ -52,12 +52,14 @@ $(function () {
 
 
   $(window).scroll(function(){
-    if ($(this).scrollTop()>0) {
-        $('.header, .top-menu').addClass('active');
+    curr = $(this).scrollTop();
+    if (curr>0) {
+        $('.header, .hidden-menu').addClass('active');
         $('.menu-wrap').fadeIn(0);
-        // $('.bottom-menu').css('display', 'none');
+        // $('.bottom-menu').css('display', 'block');
     } else {
-        $('.header, .top-menu').removeClass('active');
+        $('.header, .hidden-menu').removeClass('active');
+        // $('.bottom-menu').css('display', 'none');
     }
   })
   $(window).trigger('scroll');
@@ -108,38 +110,32 @@ $(function () {
 // 사이드메뉴 오픈
 $('.sc-menu .category-item').click(function(e){
   e.preventDefault();
-  // $(this).children('ul').length == 0 ->있냐고 물어보는거임
- 
-  // if ($(this).children('ul').css('display') == 'none') {
-  //     $(this).children('ul').stop().slideDown();
-
-  // } else {
-  //     $(this).children('ul').stop().slideUp();
-  // }
-  // $(this).toggleClass('active');
-  // $(this).siblings('ul').slideToggle();
 
   $(this).toggleClass('active');
   $(this).children('ul').slideToggle();
-      // if ($(this).children('ul').css('display') == 'none') {
-      //   $(this).children('ul').stop().slideDown();
-      // } else {
-      //   $(this).children('ul').stop().slideUp();
-      // }
   })
 
 
-  $('html, body').on('mousewheel',function(e){
-    var E = e.originalEvent.wheelDelta; //마우스 휠의 데이터 값을 받아온다
-    console.log(E);
-    //밑을 내릴때는 음수 올릴때는 양수값을 받아온다
-    if (E > 0) { /* 0보다 커야지 작동 */
-      $('.appear-tab').fadeOut();
 
+  // 스크롤시 나타나기
+  lastScroll = 0;
+
+  $(window).scroll(function(){
+
+    curr = $(this).scrollTop();
+
+    if (curr > lastScroll || curr == 0) {
+      $('.appear-tab').fadeOut();
     } else {
       $('.appear-tab').fadeIn();
     }
-  });
+
+    // if(curr < 0){
+    //   $('.appear-tab').css('display','none');
+    // }
+
+    lastScroll = curr;
+  })
   
 
 

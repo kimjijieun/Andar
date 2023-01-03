@@ -203,9 +203,10 @@
     display: inline-block;
     content: "";
 }
-
-.top-menu{display: none;}
-.top-menu.active{display: block;}
+.hidden-menu{display: none;}
+.hidden-menu.active{display: block;}
+/* .top-menu{display: none;}
+.top-menu.active{display: block;} */
 .top-menu .ic-show{
     position: absolute;
     top: 50%;
@@ -524,6 +525,8 @@ header.active .logo-area .link-mypage {
 
 
 .appear-tab{
+    display: none;
+
     text-align: center;
     position: fixed;
     right: 10px;
